@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparativa de Planes de Suscripción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        h3 {
+            text-align: center;
+        }
+        .table-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .plan {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center; /* Centra el contenido horizontalmente */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            height: 100%;
+            min-height: 450px; /* Asegura que todos tengan el mismo tamaño */
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center; /* Centra el texto */
+            overflow: hidden; /* Oculta las partes que sobresalen */
+        }
+        .plan:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .destacado {
+            border: 2px solid orange;
+        }
+        .destacado .banda {
+            position: absolute;
+            top: 30px;
+            right: -35px;
+            background-color: orange;
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg); /* Gira la banda en diagonal */
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .plan h2 {
+            margin-bottom: 10px;
+        }
+        .plan p.precio {
+            font-size: 50px; /* Tamaño más grande para el precio */
+            font-weight: bold; /* Negrita para el precio */
+            margin-bottom: 20px;
+        }
+        .plan ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .plan ul li {
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .plan {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1> Planes de Suscripción</h1>
+    <h3> Elige el que mejor se adapte a tu proyecto</h3>
+    <div class="table-container">
+        <div class="plan">
+            <h2>Plan Básico</h2>
+            <p class="precio">$10/mes</p>
+            <ul>
+                <li>Acceso limitado a contenidos</li>
+                <li>5GB de almacenamiento</li>
+                <li>Soporte por correo electrónico</li>
+            </ul>
+            <button onclick="contratarPlan('Plan Básico')">Contratar</button>
+        </div>
+
+        <div class="plan destacado">
+            <div class="banda">Destacado</div>
+            <h2>Plan Premium</h2>
+            <p class="precio">$20/mes</p>
+            <ul>
+                <li>Acceso completo a todos los contenidos</li>
+                <li>50GB de almacenamiento</li>
+                <li>Soporte prioritario 24/7</li>
+                <li>Acceso a novedades exclusivas</li>
+            </ul>
+            <button onclick="contratarPlan('Plan Premium')">Contratar</button>
+        </div>
+
+        <div class="plan">
+            <h2>Plan Familiar</h2>
+            <p class="precio">$30/mes</p>
+            <ul>
+                <li>Acceso para hasta 5 usuarios</li>
+                <li>100GB de almacenamiento</li>
+                <li>Soporte premium dedicado</li>
+                <li>Acceso a todos los contenidos y eventos</li>
+            </ul>
+            <button onclick="contratarPlan('Plan Familiar')">Contratar</button>
+        </div>
+    </div>
+
+    <script>
+        function contratarPlan(plan) {
+            alert('Ha contratado su plan: ' + plan);
+        }
+    </script>
+
+</body>
+</html>
